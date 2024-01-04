@@ -16,6 +16,10 @@ Level-two headings corresponds to new slides.
 Blank space can be filled with vertical spaces like #v(1fr).
 */
 
+== License
+
+#align(horizon + center)[#image("images/cc-zero.svg", width: 80%)]
+
 == Outline
 
 #outline()
