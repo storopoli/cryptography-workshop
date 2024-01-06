@@ -151,16 +151,18 @@ i.e. no way for you to "autodiff" this.
 
 #align(horizon)[
     #text(size: 14pt)[
-        - $s = k^(-1) dot (H + S_k K) mod q$ #text(blue)[($mod p$ and $H(m)$ implicit)]
-        - $k = s^(-1) dot (H + S_k K) mod q$ #text(blue)[(move $s$ to $k$)]
-        - $k = H dot s^(-1) + S_k K dot s^(-1) mod q$ #text(blue)[(distribute $s^(-1)$)]
-        - $k = H dot w + S_k K dot w mod q$ #text(blue)[($w = s^(-1)$)]
-        - $g^k = g^(H dot w + S_k K dot w mod q)$ #text(blue)[(put $g$ in both sides)]
-        - $g^k = g^(H dot w mod q) dot g^(S_k K dot w mod q)$ #text(blue)[(product of the exponents)]
-        - $g^k = g^(H dot w mod q) dot g^(S_k)^(K dot w mod q)$ #text(blue)[(power of the power rule)]
-        - $g^k = g^(H dot w mod q) dot P^(K dot w mod q)_k$ #text(blue)[($P_k = g^(S_k)$)]
-        - $g^k = g^(u_1) dot P^(u_2)_k$ #text(blue)[(replace $u_1$ and $u_2$)]
-        - $K = K^*$ #text(blue)[replace $K$ and $K^*$]
+        #theorem(title: "DSA")[
+            - $s = k^(-1) dot (H + S_k K) mod q$ #text(blue)[($mod p$ and $H(m)$ implicit)]
+            - $k = s^(-1) dot (H + S_k K) mod q$ #text(blue)[(move $s$ to $k$)]
+            - $k = H dot s^(-1) + S_k K dot s^(-1) mod q$ #text(blue)[(distribute $s^(-1)$)]
+            - $k = H dot w + S_k K dot w mod q$ #text(blue)[($w = s^(-1)$)]
+            - $g^k = g^(H dot w + S_k K dot w mod q)$ #text(blue)[(put $g$ in both sides)]
+            - $g^k = g^(H dot w mod q) dot g^(S_k K dot w mod q)$ #text(blue)[(product of the exponents)]
+            - $g^k = g^(H dot w mod q) dot g^(S_k)^(K dot w mod q)$ #text(blue)[(power of the power rule)]
+            - $g^k = g^(H dot w mod q) dot P^(K dot w mod q)_k$ #text(blue)[($P_k = g^(S_k)$)]
+            - $g^k = g^(u_1) dot P^(u_2)_k$ #text(blue)[(replace $u_1$ and $u_2$)]
+            - $K = K^*$ #text(blue)[(replace $K$ and $K^*$)]
+        ]
     ]
 ]
 
@@ -194,11 +196,13 @@ i.e. no way for you to "autodiff" this.
 == Why this works?
 
 #align(horizon)[
-    - $K^* = g^s P_k^e$ #text(blue)[($mod p$ implicit)]
-    - $K^* = g^(k - S_k e) g^(S_k e)$ #text(blue)[($s = k - S_k e$ and $P_k = g^(S_k)$)]
-    - $K^* = g^k$ #text(blue)[(cancel $S_k e$ in the exponent of $g$)]
-    - $K^* = K$ #text(blue)[($K = g^k$)]
-    - Hence $H(K^* || m) = H(K || m)$
+    #theorem(title: "Schnorr")[
+        - $K^* = g^s P_k^e$ #text(blue)[($mod p$ implicit)]
+        - $K^* = g^(k - S_k e) g^(S_k e)$ #text(blue)[($s = k - S_k e$ and $P_k = g^(S_k)$)]
+        - $K^* = g^k$ #text(blue)[(cancel $S_k e$ in the exponent of $g$)]
+        - $K^* = K$ #text(blue)[($K = g^k$)]
+        - Hence $H(K^* || m) = H(K || m)$
+    ]
 ]
 
 = Why we don't reuse nonces?
@@ -237,7 +241,7 @@ i.e. no way for you to "autodiff" this.
     Remember: you know $s', s, e, e'$ and $k' - k = 0$.
 ]
 
-= #text(size: 20pt)[Why we can combine Schnorr $P_k$ and not DSA?]
+= Why we can combine Schnorr $P_k$ and not DSA?
 
 #text(size: 12pt)[
     Revisit the signature step in each one:
