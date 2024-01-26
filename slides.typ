@@ -243,7 +243,7 @@ i.e. no way for you to "autodiff" this.
 
 = Why we can combine Schnorr $P_k$ and not DSA?
 
-#text(size: 12pt)[
+#text(size: 10pt)[
     Revisit the signature step in each one:
 
     - DSA: $s = k^(-1) (H(m) + S_k K)$
@@ -257,4 +257,7 @@ i.e. no way for you to "autodiff" this.
 
     Modular inverse, i.e. anything with $x^(-1)$, is _not_ linear
     and $s' + s$ in DSA is _not_ signed from $S_k' + S_k$ (assuming $m' = m$).
+    That is:
+
+    $ x^(-1) + y^(-1) != (x + y)^(-1) $
 ]
