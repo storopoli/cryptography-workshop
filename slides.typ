@@ -47,7 +47,11 @@ Blank space can be filled with vertical spaces like #v(1fr).
 
 #link("https://en.wikipedia.org/wiki/Euclidean_algorithm")[Euclidean Algorithm]
 
-#align(horizon + center)[#image("images/euclid.jpg", width: 40%)]
+#align(horizon + center)[#image("images/euclid.jpg", width: 30%)]
+
+#text(size: 12pt)[
+    For 100+ digit numbers we have #link("https://en.wikipedia.org/wiki/General_number_field_sieve")[General Number Field Sieve].
+]
 
 == Easy to check
 
