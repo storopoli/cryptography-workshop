@@ -246,12 +246,12 @@ i.e. no way for you to "autodiff" this.
 #text(size: 12pt)[
     Revisit the signature step in each one:
 
-    - DSA: $s = k^(1) (H(m) + S_k K)$
+    - DSA: $s = k^(-1) (H(m) + S_k K)$
     - Schorr: $s = k - S_k H(K || m)$
 
     Modular addition, i.e. anything with $+, dot, -$, is linear:
 
-    $ P'_k + P_k = (g^(S'_k) + g^(S_k) = g^(S_k' + S_k) $
+    $ P'_k + P_k = g^(S'_k) + g^(S_k) = g^(S_k' + S_k) $
 
     and $s' + s$ in Schnorr is signed from $S_k' + S_k$ (assuming $m' = m$).
 
