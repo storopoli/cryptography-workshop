@@ -256,5 +256,5 @@ i.e. no way for you to "autodiff" this.
     and $s' + s$ in Schnorr is signed from $S_k' + S_k$ (assuming $m' = m$).
 
     Modular inverse, i.e. anything with $x^(-1)$, is _not_ linear
-    and $s' + s'$ in DSA is _not_ signed from $S_k' + S_k$ (assuming $m' = m$).
+    and $s' + s$ in DSA is _not_ signed from $S_k' + S_k$ (assuming $m' = m$).
 ]
