@@ -136,7 +136,7 @@ i.e. no way for you to "autodiff" this.
         + Choose your nonce $k$: as a random integer $∈ [1, q-1]$
         + Compute your "public nonce" $K$: $(g^k mod p) mod q$ (also known as $r$)
         + Get your message ($m$) through a cryptopraphic hash function $H$: $H(m)$
-        + Compute your signature $s$: $(k^(1) (H(m) + S_k K)) mod q$
+        + Compute your signature $s$: $(k^(-1) (H(m) + S_k K)) mod q$
         + Send to your buddy $(p, q, g)$, $P_k$, and $(K, s)$
     ]
 ]
@@ -162,7 +162,6 @@ i.e. no way for you to "autodiff" this.
             - $k = H dot w + S_k K dot w mod q$ #text(blue)[($w = s^(-1)$)]
             - $g^k = g^(H dot w + S_k K dot w mod q)$ #text(blue)[(put $g$ in both sides)]
             - $g^k = g^(H dot w mod q) dot g^(S_k K dot w mod q)$ #text(blue)[(product of the exponents)]
-            - $g^k = g^(H dot w mod q) dot g^(S_k)^(K dot w mod q)$ #text(blue)[(power of the power rule)]
             - $g^k = g^(H dot w mod q) dot P^(K dot w mod q)_k$ #text(blue)[($P_k = g^(S_k)$)]
             - $g^k = g^(u_1) dot P^(u_2)_k$ #text(blue)[(replace $u_1$ and $u_2$)]
             - $K = K^*$ #text(blue)[(replace $K$ and $K^*$)]
@@ -264,4 +263,18 @@ i.e. no way for you to "autodiff" this.
     That is:
 
     $ x^(-1) + y^(-1) != (x + y)^(-1) $
+]
+
+== Don't believe it?
+
+#v(2em)
+
+$ x^(-1) + y^(-1) != (x + y)^(-1) $
+
+#align(horizon)[
+    ```python
+    >>> p = 71; x = 13; y = 17;
+    >>> pow(x, -1, p) + pow(y, -1, p) == pow(x + y, -1, p)
+    False
+    ```
 ]
