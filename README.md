@@ -10,7 +10,7 @@ This workshop covers:
 - DSA
 - Schnorr
 - Why we don’t reuse nonces?
-- Why we can combine Schnorr Public Keys and not DSA?
+- Why we can combine Schnorr Signatures and not DSA?
 
 The slides are built using [Typst](https://typst.app) on CI and found at
 [`the latest release`](https://github.com/storopoli/cryptography-workshop/releases/latest/download/slides.pdf).

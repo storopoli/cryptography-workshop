@@ -218,7 +218,7 @@ i.e. no way for you to "autodiff" this.
     ]
 ]
 
-== Recovering Nonce in DSA
+== Recovering $S_K$ in DSA
 
 #align(horizon)[
     $ s' - s = (k'^(-1) (H(m_1) + S_k K')) - (k^(-1) (H(m_2) + S_k K)) $
@@ -234,7 +234,7 @@ i.e. no way for you to "autodiff" this.
     $ S_k = K^(-1) (k s - H(m)) $
 ]
 
-== Recovering Nonce in Schnorr
+== Recovering $S_k$ in Schnorr
 
 #align(horizon)[
     $ s' - s = (k' - k) - S_k (e' - e) $
@@ -244,7 +244,7 @@ i.e. no way for you to "autodiff" this.
     Remember: you know $s', s, e, e'$ and $k' - k = 0$.
 ]
 
-= Why we can combine Schnorr $P_k$ and not DSA?
+= Why we can combine Schnorr $s$ and not DSA?
 
 #text(size: 10pt)[
     Revisit the signature step in each one:
