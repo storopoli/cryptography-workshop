@@ -250,7 +250,7 @@ i.e. no way for you to "autodiff" this.
     Revisit the signature step in each one:
 
     - DSA: $s = k^(-1) (H(m) + S_k K)$
-    - Schorr: $s = k - S_k H(K || m)$
+    - Schnorr: $s = k - S_k H(K || m)$
 
     Modular addition, i.e. anything with $+, dot, -$, is linear:
 
