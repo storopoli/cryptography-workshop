@@ -179,7 +179,7 @@ i.e. no way for you to "autodiff" this.
         + Compute your public key $P_k$: $g^(S_k)$
         + Choose your nonce $k$: as a random integer $∈ [1, p-1]$
         + Compute your "public nonce" $K$: $g^k mod p$ (also known as $r$)
-        + Get your message ($m$) through a cryptopraphic hash function $H$ concatenating with $K$: $e = H(K || m)$
+        + Get your message ($m$) through a cryptographic hash function $H$ concatenating with $K$: $e = H(K || m)$
         + Compute your signature $s$: $k - S_k e$
         + Send to your buddy $(p, g)$, $P_k$, and $(K, s)$
     ]
